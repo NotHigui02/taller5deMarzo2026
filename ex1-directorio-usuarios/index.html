@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX1 - Directorio de Usuarios</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <p class="eyebrow">Taller JS Básico · EX1</p>
+        <h1>Directorio de Usuarios</h1>
+        <p class="subtitle">
+          Listado desde JSONPlaceholder, filtro en vivo y detalle al seleccionar.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="toolbar" aria-label="Filtro de usuarios">
+        <label class="filter-label" for="filtro-nombre">
+          Filtrar por nombre
+        </label>
+        <input
+          id="filtro-nombre"
+          type="text"
+          placeholder="Escribe un nombre…"
+          autocomplete="off"
+        />
+        <p id="estado-filtro" class="status" aria-live="polite">
+          Cargando usuarios…
+        </p>
+      </section>
+
+      <section class="table-card">
+        <table id="tabla-usuarios">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Empresa</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpo-usuarios"></tbody>
+        </table>
+        <p id="mensaje-vacio" class="empty hidden">
+          No hay coincidencias para el filtro actual.
+        </p>
+      </section>
+    </main>
+
+    <div id="fondo-detalle" class="overlay hidden" aria-hidden="true"></div>
+    <aside
+      id="panel-detalle"
+      class="detail-panel hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="detalle-titulo"
+    >
+      <button id="cerrar-detalle" class="close-btn" type="button" aria-label="Cerrar detalle">
+        Cerrar
+      </button>
+      <h2 id="detalle-titulo">Detalle del usuario</h2>
+      <p id="detalle-nombre" class="detail-name"></p>
+      <dl class="detail-list">
+        <div>
+          <dt>Teléfono</dt>
+          <dd id="detalle-telefono"></dd>
+        </div>
+        <div>
+          <dt>Dirección</dt>
+          <dd id="detalle-direccion"></dd>
+        </div>
+      </dl>
+    </aside>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
