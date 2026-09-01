@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX2 - Mini Calculadora Segura</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <p class="eyebrow">Taller JS Básico · EX2</p>
+        <h1>Mini Calculadora Segura</h1>
+        <p class="subtitle">
+          Suma, resta, multiplicación y división con validaciones e historial.
+        </p>
+      </div>
+    </header>
+
+    <main class="container layout">
+      <section class="card">
+        <form id="form-calculadora" novalidate>
+          <div class="fields">
+            <label>
+              Número A
+              <input id="numero-a" type="number" step="any" placeholder="Ej. 12" required />
+            </label>
+
+            <label>
+              Operación
+              <select id="operacion" required>
+                <option value="suma">Suma (+)</option>
+                <option value="resta">Resta (−)</option>
+                <option value="multiplicacion">Multiplicación (×)</option>
+                <option value="division">División (÷)</option>
+              </select>
+            </label>
+
+            <label>
+              Número B
+              <input id="numero-b" type="number" step="any" placeholder="Ej. 3" required />
+            </label>
+          </div>
+
+          <button type="submit">Calcular</button>
+        </form>
+
+        <p id="mensaje" class="message" aria-live="polite"></p>
+        <p id="resultado" class="result hidden"></p>
+      </section>
+
+      <section class="card">
+        <h2>Historial</h2>
+        <p id="historial-vacio" class="empty">Aún no hay operaciones.</p>
+        <ol id="lista-historial" class="history"></ol>
+      </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
